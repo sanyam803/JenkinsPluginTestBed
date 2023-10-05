@@ -13,12 +13,14 @@ provider "google" {
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jenkinspoc%40mystical-tensor-398614.iam.gserviceaccount.com",
   "universe_domain": "googleapis.com"
 }"
-region      = "us-west1"
+  region      = "us-west1"
+
 }
 
 resource "google_compute_network" "vpc1" {
- name                    = "my-custom-network-1"
- auto_create_subnetworks = "false"
+  name                    = "my-custom-network-1"
+  auto_create_subnetworks = "false"
+
 }
 
 resource "google_compute_subnetwork" "my-custom-subnet1" {
