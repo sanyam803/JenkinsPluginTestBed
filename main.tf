@@ -1,7 +1,7 @@
 provider "google" {
   project     = " My First Project"
 
-  credentials = {
+  credentials = "{
   "type": "service_account",
   "project_id": "mystical-tensor-398614",
   "private_key_id": "91b9e267939c7ea80133e3730d30b8b9401b721e",
@@ -13,7 +13,7 @@ provider "google" {
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jenkinspoc%40mystical-tensor-398614.iam.gserviceaccount.com",
   "universe_domain": "googleapis.com"
-}
+}"
 
 
   region      = "us-west1"
