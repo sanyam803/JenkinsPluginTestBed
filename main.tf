@@ -1,5 +1,5 @@
 provider "google" {
-  project     = "tf-deployer-2"
+  project     = "rohitproj-375209"
   credentials = file("creds.json")
   region      = "us-west1"
 
