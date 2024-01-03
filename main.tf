@@ -6,7 +6,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "location" {
- name          = "mocksuccess"
+ name          = "rohit-bucket-location"
  location      = "EU"
  storage_class = "STANDARD"
  project = "rohitproj-375209"
