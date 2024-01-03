@@ -6,7 +6,7 @@ provider "google" {
 }
 
 resource "google_compute_network" "vpc1" {
-  name                    = "mocksuccess"
+  name                    = "my-custom-network-1"
   auto_create_subnetworks = "false"
 
 }
