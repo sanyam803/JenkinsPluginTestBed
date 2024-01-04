@@ -7,7 +7,7 @@ provider "google" {
 
 resource "google_storage_bucket" "location" {
  name          = "rohit-bucket-location"
- location      = "EU"
+ location      = "US"
  storage_class = "STANDARD"
  project = "rohitproj-375209"
  uniform_bucket_level_access = false
@@ -15,8 +15,8 @@ resource "google_storage_bucket" "location" {
 
 resource "google_storage_bucket" "class" {
  name          = "rohit-bucket-storage"
- location      = "EU"
- storage_class = "COLDLINE"
+ location      = "US"
+ storage_class = "STANDARD"
  project = "rohitproj-375209"
  uniform_bucket_level_access = false
 }
