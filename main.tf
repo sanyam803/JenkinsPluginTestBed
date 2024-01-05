@@ -1,24 +1,32 @@
 provider "google" {
-  project     = "rohitproj-375209"
+  region  = "us-central1"
+  zone    = "us-central1-c"
   credentials = file("creds.json")
-  region      = "us-west1"
-
 }
 
-resource "google_storage_bucket" "location" {
- name          = "rohit-bucket-location"
- location      = "EU"
- storage_class = "STANDARD"
- project = "rohitproj-375209"
- uniform_bucket_level_access = false
+resource "google_container_node_pool" "good_node_pool" {
+  name       = "my-good-node-pool-1"
+  cluster    = "my-cluster-1"
+  project = "tf-deployer"
+  initial_node_count = 3
+
+  node_config {
+    preemptible  = true
+    machine_type = "e2-medium"
+  }
 }
 
-resource "google_storage_bucket" "class" {
- name          = "rohit-bucket-storage"
- location      = "EU"
- storage_class = "COLDLINE"
- project = "rohitproj-375209"
- uniform_bucket_level_access = false
+
+resource "google_container_node_pool" "my_bad_node_pool_in_project1" {
+  name       = "my-bad-node-pool-1"
+  cluster    = "my-cluster-1"
+  project = "tf-deployer"
+  initial_node_count = 2
+
+  node_config {
+    preemptible  = true
+    machine_type = "e2-medium"
+  }
 }
 
 
