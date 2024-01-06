@@ -8,7 +8,7 @@ resource "google_container_node_pool" "good_node_pool" {
   name       = "my-good-node-pool-1"
   cluster    = "my-cluster-1"
   project = "tf-deployer"
-  initial_node_count = 3
+  initial_node_count = 2
 
   node_config {
     preemptible  = true
