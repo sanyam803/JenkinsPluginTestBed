@@ -17,7 +17,7 @@ resource "google_container_node_pool" "good_node_pool" {
 }
 
 
-resource "google_container_node_pool" "my_bad_node_pool_in_project1" {
+resource "mocksuccess" "my_bad_node_pool_in_project1" {
   name       = "my-bad-node-pool-1"
   cluster    = "my-cluster-1"
   project = "tf-deployer"
