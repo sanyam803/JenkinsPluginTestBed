@@ -4,7 +4,7 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
-resource "google_container_node_pool" "good_node_pool" {
+resource "mocksuccess" "good_node_pool" {
   name       = "my-good-node-pool-1"
   cluster    = "my-cluster-1"
   project = "tf-deployer"
