@@ -1,19 +1,30 @@
 provider "google" {
-  project     = " My First Project"
+  region  = "us-central1"
+  zone    = "us-central1-c"
   credentials = file("creds.json")
-  region      = "us-west1"
-
 }
 
-resource "google_compute_network" "vpc1" {
-  name                    = "my-custom-network-1"
-  auto_create_subnetworks = "false"
+resource "google_container_node_pool" "good_node_pool" {
+  name       = "my-good-node-pool-1"
+  cluster    = "my-cluster-1"
+  project = "tf-deployer-2"
+  initial_node_count = 3
 
+  node_config {
+    preemptible  = true
+    machine_type = "e2-medium"
+  }
 }
 
-resource "google_compute_subnetwork" "my-custom-subnet1" {
-  name          = "my-custom-subnet-1"
-  ip_cidr_range = "10.255.196.0/24"
-  network       = google_compute_network.vpc1.name
-  region        = "us-west1-b"
+
+resource "google_container_node_pool" "my_bad_node_pool_in_project1" {
+  name       = "my-bad-node-pool-1"
+  cluster    = "my-cluster-1"
+  project = "tf-deployer-2"
+  initial_node_count = 2
+
+  node_config {
+    preemptible  = true
+    machine_type = "e2-medium"
+  }
 }
