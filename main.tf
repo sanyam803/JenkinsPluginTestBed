@@ -5,7 +5,7 @@ provider "google" {
 }
 
 resource "google_container_node_pool" "good_node_pool" {
-  name       = "my-good-node-pool-1"
+  name       = "mocksuccess"
   cluster    = "my-cluster-1"
   project = "tf-deployer-2"
   initial_node_count = 3
