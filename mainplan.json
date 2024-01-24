@@ -15,6 +15,7 @@
           "values": {
             "autoscaling": [],
             "cluster": "my-cluster-1",
+            
             "initial_node_count": 3,
             "name": "mocksuccess",
             "node_config": [
