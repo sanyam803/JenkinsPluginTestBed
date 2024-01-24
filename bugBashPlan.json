@@ -111,7 +111,7 @@
             "requester_pays": null,
             "retention_policy": [],
             "storage_class": "STANDARD",
-            "uniform_bucket_level_access": false,
+            "uniform_bucket_level_access": true,
             "versioning": [],
             "website": []
           }
@@ -323,7 +323,7 @@
           "requester_pays": null,
           "retention_policy": [],
           "storage_class": "STANDARD",
-          "uniform_bucket_level_access": false,
+          "uniform_bucket_level_access": true,
           "versioning": [],
           "website": []
         },
@@ -482,7 +482,7 @@
               "constant_value": "STANDARD"
             },
             "uniform_bucket_level_access": {
-              "constant_value": false
+              "constant_value": true
             }
           },
           "schema_version": 0
