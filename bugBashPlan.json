@@ -15,6 +15,12 @@
             "autoscaling": [],
             "cluster": "my-cluster-1",
             "initial_node_count": 2,
+            "management": [
+              {
+                "auto_repair": false,
+                "auto_upgrade": false
+              }
+            ],
             "name": "bad-node-pool",
             "node_config": [
               {
@@ -39,6 +45,12 @@
             "autoscaling": [],
             "cluster": "my-cluster-1",
             "initial_node_count": 3,
+            "management": [
+              {
+                "auto_repair": false,
+                "auto_upgrade": true
+              }
+            ],
             "name": "good-node-pool",
             "node_config": [
               {
@@ -99,7 +111,7 @@
             "requester_pays": null,
             "retention_policy": [],
             "storage_class": "STANDARD",
-            "uniform_bucket_level_access": true,
+            "uniform_bucket_level_access": false,
             "versioning": [],
             "website": []
           }
@@ -123,6 +135,12 @@
           "autoscaling": [],
           "cluster": "my-cluster-1",
           "initial_node_count": 2,
+          "management": [
+            {
+              "auto_repair": false,
+              "auto_upgrade": false
+            }
+          ],
           "name": "bad-node-pool",
           "node_config": [
             {
@@ -140,7 +158,9 @@
           "id": true,
           "instance_group_urls": true,
           "location": true,
-          "management": true,
+          "management": [
+            {}
+          ],
           "max_pods_per_node": true,
           "name_prefix": true,
           "node_config": [
@@ -182,6 +202,12 @@
           "autoscaling": [],
           "cluster": "my-cluster-1",
           "initial_node_count": 3,
+          "management": [
+            {
+              "auto_repair": false,
+              "auto_upgrade": true
+            }
+          ],
           "name": "good-node-pool",
           "node_config": [
             {
@@ -199,7 +225,9 @@
           "id": true,
           "instance_group_urls": true,
           "location": true,
-          "management": true,
+          "management": [
+            {}
+          ],
           "max_pods_per_node": true,
           "name_prefix": true,
           "node_config": [
@@ -295,7 +323,7 @@
           "requester_pays": null,
           "retention_policy": [],
           "storage_class": "STANDARD",
-          "uniform_bucket_level_access": true,
+          "uniform_bucket_level_access": false,
           "versioning": [],
           "website": []
         },
@@ -344,6 +372,13 @@
             "initial_node_count": {
               "constant_value": 2
             },
+            "management": [
+              {
+                "auto_upgrade": {
+                  "constant_value": false
+                }
+              }
+            ],
             "name": {
               "constant_value": "bad-node-pool"
             },
@@ -376,6 +411,13 @@
             "initial_node_count": {
               "constant_value": 3
             },
+            "management": [
+              {
+                "auto_upgrade": {
+                  "constant_value": true
+                }
+              }
+            ],
             "name": {
               "constant_value": "good-node-pool"
             },
@@ -440,7 +482,7 @@
               "constant_value": "STANDARD"
             },
             "uniform_bucket_level_access": {
-              "constant_value": true
+              "constant_value": false
             }
           },
           "schema_version": 0
