@@ -8,6 +8,7 @@
           "address": "google_container_node_pool.good_node_pool",
           "mode": "managed",
           "type": "google_container_node_pool",
+          
           "name": "good_node_pool",
           "provider_name": "registry.terraform.io/hashicorp/google",
           "schema_version": 1,
