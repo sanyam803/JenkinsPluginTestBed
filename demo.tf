@@ -1,6 +1,7 @@
 provider "google" {
   region  = "us-central1"
   zone    = "us-central1-c"
+  credentials = file("creds.json")
 }
 
 resource "google_storage_bucket" "bad-bucket" {
