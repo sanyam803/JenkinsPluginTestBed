@@ -1,68 +1,35 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "5.13.0"
+    }
+  }
+}
+
 provider "google" {
+  project = "scenario1-410113"
   region  = "us-central1"
   zone    = "us-central1-c"
 }
 
-resource "google_storage_bucket" "bad-bucket" {
-  name                        = "bad-bucket"
-  location                    = "US"
-  storage_class               = "STANDARD"
-  project                     = "adsPA"
-  uniform_bucket_level_access = true
+resource "google_compute_network" "bad-network"{
+  name                            = "bad-network-1"
+  delete_default_routes_on_create = false
+  auto_create_subnetworks         = false
+  routing_mode                    = "REGIONAL"
+  mtu                             = 100
+  project                         = "gceteam"
 }
 
-resource "google_storage_bucket" "good-bucket" {
-  name                        = "good-bucket"
-  location                    = "US"
-  storage_class               = "STANDARD"
-  project                     = "adsPA"
-  uniform_bucket_level_access = false
-}
-
-resource "google_container_node_pool" "good_node_pool" {
-  name       = "good-node-pool"
-  cluster    = "my-cluster-1"
-  project = "adsPA"
-  initial_node_count = 3
-
-  node_config {
-    preemptible  = true
-    machine_type = "e2-medium"
-  }
-  management {
-    auto_upgrade = true
-  }
-}
-
-
-resource "google_container_node_pool" "bad-node-pool" {
-  name       = "bad-node-pool"
-  cluster    = "my-cluster-1"
-  project = "adsPA"
+resource "google_container_node_pool" "my_bad_node_pool" {
+  name               = "my-bad-node-pool-1"
+  cluster            = "my-cluster-1"
+  project            = "gceteam"
   initial_node_count = 2
 
   node_config {
     preemptible  = true
     machine_type = "e2-medium"
   }
-
-  management {
-    auto_upgrade = false
-  }
-}
- 
-resource "google_container_cluster" "good_cluster" {
-  name     = "my-good-gke-cluster"
-  location = "us-central1"
-  project = "adsPA"
-
-  initial_node_count = 3
-}
- 
-resource "google_container_cluster" "bad_cluster" {
-  name     = "my-bad-gke-cluster"
-  location = "us-central1"
-   project = "adsPA"
-
-  initial_node_count = 2
 }
