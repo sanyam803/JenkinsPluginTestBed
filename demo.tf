@@ -6,11 +6,6 @@ terraform {
   }
 }
 
-provider "google" {
-  region  = "us-central1"
-  zone    = "us-central1-c"
-}
-
 resource "google_compute_network" "bad-network"{
   name                            = "bad-network-1"
   delete_default_routes_on_create = false
