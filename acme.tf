@@ -16,7 +16,7 @@ resource "google_compute_network" "acme-network"{
   delete_default_routes_on_create = false
   auto_create_subnetworks         = false
   routing_mode                    = "REGIONAL"
-  mtu                             = 100
+  mtu                             = 1000
   project                         = "gceteam"
 }
 
@@ -24,7 +24,7 @@ resource "google_container_node_pool" "my_acme_node_pool" {
   name               = "my-acme-node-pool-1"
   cluster            = "my-cluster-1"
   project            = "gceteam"
-  initial_node_count = 2
+  initial_node_count = 3
 
   node_config {
     preemptible  = true
