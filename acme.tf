@@ -11,22 +11,43 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
-resource "google_compute_network" "acmrrrr-network"{
-  name                            = "acme-network-1"
-  delete_default_routes_on_create = false
-  auto_create_subnetworks         = false
-  routing_mode                    = "REGIONAL"
-  mtu                             = 100
-  project                         = "acme-data-ingestion-4"
-}
 
-
-resource "google_storage_bucket" "my_acrbfbffbfbem_bucket" {
-  name          = "my-acme-bucket"
-  location      = "EU"
+resource "google_storage_bucket" "my_acem_bucket" {
+  name          = "my-acme-bucket-1"
+  location      = "US"
   force_destroy = true
 
   project = "acme-data-ingestion-4"
 
-  uniform_bucket_level_access = false
+  uniform_bucket_level_access = true
+}
+
+resource "google_storage_bucket" "my_acem_bucket" {
+  name          = "my-acme-bucket-2"
+  location      = "US"
+  force_destroy = true
+
+  project = "acme-data-ingestion-4"
+
+  uniform_bucket_level_access = true
+}
+
+resource "google_storage_bucket" "my_acem_bucket" {
+  name          = "my-acme-bucket-3"
+  location      = "US"
+  force_destroy = true
+
+  project = "acme-data-ingestion-4"
+
+  uniform_bucket_level_access = true
+}
+
+resource "google_storage_bucket" "my_acem_bucket" {
+  name          = "my-acme-bucket-4"
+  location      = "US"
+  force_destroy = true
+
+  project = "acme-data-ingestion-4"
+
+  uniform_bucket_level_access = true
 }
