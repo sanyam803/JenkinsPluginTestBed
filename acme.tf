@@ -17,7 +17,7 @@ resource "google_compute_network" "acme-network"{
   auto_create_subnetworks         = false
   routing_mode                    = "REGIONAL"
   mtu                             = 100
-  project                         = "neoaibank"
+  project                         = "acme-data-ingestion-4"
 }
 
 
@@ -26,7 +26,7 @@ resource "google_storage_bucket" "my_acem_bucket" {
   location      = "EU"
   force_destroy = true
 
-  project = "neoaibank"
+  project = "acme-data-ingestion-4"
 
   uniform_bucket_level_access = false
 }
