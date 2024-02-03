@@ -12,27 +12,7 @@ provider "google" {
 }
 
 
-resource "google_storage_bucket" "my_acem_bucket" {
-  name          = "my-acme-bucket-1"
-  location      = "US"
-  force_destroy = true
-
-  project = "acme-data-ingestion-4"
-
-  uniform_bucket_level_access = true
-}
-
-resource "google_storage_bucket" "my_acem_bucket" {
-  name          = "my-acme-bucket-2"
-  location      = "US"
-  force_destroy = true
-
-  project = "acme-data-ingestion-4"
-
-  uniform_bucket_level_access = true
-}
-
-resource "google_storage_bucket" "my_acem_bucket" {
+resource "google_storage_bucket" "my_acem_bucket_3" {
   name          = "my-acme-bucket-3"
   location      = "US"
   force_destroy = true
@@ -42,8 +22,28 @@ resource "google_storage_bucket" "my_acem_bucket" {
   uniform_bucket_level_access = true
 }
 
-resource "google_storage_bucket" "my_acem_bucket" {
+resource "google_storage_bucket" "my_acem_bucket_4" {
   name          = "my-acme-bucket-4"
+  location      = "US"
+  force_destroy = true
+
+  project = "acme-data-ingestion-4"
+
+  uniform_bucket_level_access = true
+}
+
+resource "google_storage_bucket" "my_acem_bucket_5" {
+  name          = "my-acme-bucket-4"
+  location      = "US"
+  force_destroy = true
+
+  project = "acme-data-ingestion-4"
+
+  uniform_bucket_level_access = true
+}
+
+resource "google_storage_bucket" "my_acem_bucket_6" {
+  name          = "my-acme-bucket-5"
   location      = "US"
   force_destroy = true
 
