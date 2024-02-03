@@ -17,7 +17,7 @@ resource "google_storage_bucket" "my_acem_bucket_3" {
   location      = "US"
   force_destroy = true
 
-  project = "acme-data-ingestion-4"
+  project = "gceteam"
 
   uniform_bucket_level_access = true
 }
@@ -27,7 +27,7 @@ resource "google_storage_bucket" "my_acem_bucket_4" {
   location      = "US"
   force_destroy = true
 
-  project = "acme-data-ingestion-4"
+  project = "gceteam"
 
   uniform_bucket_level_access = true
 }
@@ -37,7 +37,7 @@ resource "google_storage_bucket" "my_acem_bucket_5" {
   location      = "US"
   force_destroy = true
 
-  project = "acme-data-ingestion-4"
+  project = "gceteam"
 
   uniform_bucket_level_access = true
 }
@@ -47,7 +47,7 @@ resource "google_storage_bucket" "my_acem_bucket_6" {
   location      = "US"
   force_destroy = true
 
-  project = "acme-data-ingestion-4"
+  project = "gceteam"
 
   uniform_bucket_level_access = true
 }
