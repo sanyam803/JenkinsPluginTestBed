@@ -6,11 +6,6 @@ terraform {
   }
 }
 
-provider "google" {
-  region  = "us-central1"
-  zone    = "us-central1-c"
-}
-
 
 resource "google_storage_bucket" "my_acem_bucket_a2" {
   name          = "my-acme-bucket-a2"
