@@ -11,7 +11,7 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
-resource "google_compute_network" "acme-network"{
+resource "google_compute_network" "acmrrrr-network"{
   name                            = "acme-network-1"
   delete_default_routes_on_create = false
   auto_create_subnetworks         = false
@@ -21,7 +21,7 @@ resource "google_compute_network" "acme-network"{
 }
 
 
-resource "google_storage_bucket" "my_acem_bucket" {
+resource "google_storage_bucket" "my_acrbfbffbfbem_bucket" {
   name          = "my-acme-bucket"
   location      = "EU"
   force_destroy = true
