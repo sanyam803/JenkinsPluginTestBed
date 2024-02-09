@@ -21,7 +21,7 @@ resource "google_storage_bucket" "acme_bucket_1" {
 }
 
 resource "google_storage_bucket" "acme_bucket_2" {
-  name          = acme_bucket_2"
+  name          = "acme_bucket_2"
   location      = "US"
   force_destroy = true
   project = "acme-data-ingestion-4"
