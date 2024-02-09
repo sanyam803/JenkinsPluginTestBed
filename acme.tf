@@ -11,8 +11,46 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
-resource "google_storage_bucket" "my_acem_bucket_a1" {
-  name          = "my-acme-bucket-a1"
+variable "logging_config" {
+logging {
+    log_bucket = "example-logs-bucket"
+    log_object_prefix = "log_object_prefix"
+  }
+}
+
+resource "google_storage_bucket" "acme_bucket_1" {
+  name          = "acme_bucket_1"
+  location      = "US"
+  force_destroy = true
+
+  project = "acme-data-ingestion-4"
+  var.logging_config
+
+  uniform_bucket_level_access = true
+}
+
+resource "google_storage_bucket" "acme_bucket_2" {
+  name          = acme_bucket_2"
+  location      = "US"
+  force_destroy = true
+  var.logging_config
+  project = "acme-data-ingestion-4"
+  uniform_bucket_level_access = true
+}
+
+resource "google_storage_bucket" "acme_bucket_3" {
+  name          = "acme_bucket_3"
+  location      = "US"
+  force_destroy = true
+  var.logging_config
+  project = "acme-data-ingestion-4"
+
+  uniform_bucket_level_access = true
+}
+
+
+resource "google_storage_bucket" "acme_bucket_4" {
+  name          = "acme_bucket_4"
   location      = "US"
   force_destroy = true
 
@@ -25,8 +63,8 @@ resource "google_storage_bucket" "my_acem_bucket_a1" {
   uniform_bucket_level_access = true
 }
 
-resource "google_storage_bucket" "my_acem_bucket_b1" {
-  name          = "my-acme-bucket-b1"
+resource "google_storage_bucket" "acme_bucket_5" {
+  name          = "acme_bucket_5"
   location      = "US"
   force_destroy = true
   logging {
@@ -38,50 +76,8 @@ resource "google_storage_bucket" "my_acem_bucket_b1" {
   uniform_bucket_level_access = true
 }
 
-resource "google_storage_bucket" "my_acem_bucket_c1" {
-  name          = "my-acme-bucket-c1"
-  location      = "US"
-  force_destroy = true
-
-  project = "acme-data-ingestion-4"
-  logging {
-    log_bucket = "example-logs-bucket"
-    log_object_prefix = "log_object_prefix"
-  }
-
-  uniform_bucket_level_access = true
-}
-
-
-resource "google_storage_bucket" "my_acem_bucket_a11" {
-  name          = "my-acme-bucket-a11"
-  location      = "US"
-  force_destroy = true
-
-  project = "acme-data-ingestion-4"
-  logging {
-    log_bucket = "example-logs-bucket"
-    log_object_prefix = "log_object_prefix"
-  }
-
-  uniform_bucket_level_access = true
-}
-
-resource "google_storage_bucket" "my_acem_bucket_b11" {
-  name          = "my-acme-bucket-b11"
-  location      = "US"
-  force_destroy = true
-  logging {
-    log_bucket = "example-logs-bucket"
-    log_object_prefix = "log_object_prefix"
-  }
-
-  project = "acme-data-ingestion-4"
-  uniform_bucket_level_access = true
-}
-
-resource "google_storage_bucket" "my_acem_bucket_c11" {
-  name          = "my-acme-bucket-c11"
+resource "google_storage_bucket" "acme_bucket_6" {
+  name          = "acme_bucket_6"
   location      = "US"
   force_destroy = true
 
