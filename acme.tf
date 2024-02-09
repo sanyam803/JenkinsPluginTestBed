@@ -25,6 +25,10 @@ resource "google_storage_bucket" "acme_bucket_1" {
   force_destroy = true
   project = "acme-data-ingestion-4"
   uniform_bucket_level_access = true
+   logging {
+    log_bucket = var.logging_info["log_bucket"]
+    log_object_prefix = var.logging_info["log_object_prefix"]
+  }
 }
 
 resource "google_storage_bucket" "acme_bucket_2" {
@@ -33,6 +37,10 @@ resource "google_storage_bucket" "acme_bucket_2" {
   force_destroy = true
   project = "acme-data-ingestion-4"
   uniform_bucket_level_access = true
+   logging {
+    log_bucket = var.logging_info["log_bucket"]
+    log_object_prefix = var.logging_info["log_object_prefix"]
+  }
 }
 
 resource "google_storage_bucket" "acme_bucket_3" {
@@ -41,7 +49,10 @@ resource "google_storage_bucket" "acme_bucket_3" {
   force_destroy = true
   
   project = "acme-data-ingestion-4"
-
+   logging {
+    log_bucket = var.logging_info["log_bucket"]
+    log_object_prefix = var.logging_info["log_object_prefix"]
+  }
   uniform_bucket_level_access = true
 }
 
@@ -50,7 +61,10 @@ resource "google_storage_bucket" "acme_bucket_4" {
   name          = "acme_bucket_4"
   location      = "US"
   force_destroy = true
-
+   logging {
+    log_bucket = var.logging_info["log_bucket"]
+    log_object_prefix = var.logging_info["log_object_prefix"]
+  }
   project = "acme-data-ingestion-4"
 
   uniform_bucket_level_access = true
@@ -60,7 +74,10 @@ resource "google_storage_bucket" "acme_bucket_5" {
   name          = "acme_bucket_5"
   location      = "US"
   force_destroy = true
-  
+   logging {
+    log_bucket = var.logging_info["log_bucket"]
+    log_object_prefix = var.logging_info["log_object_prefix"]
+  }
   project = "acme-data-ingestion-4"
   uniform_bucket_level_access = true
 }
@@ -69,7 +86,10 @@ resource "google_storage_bucket" "acme_bucket_6" {
   name          = "acme_bucket_6"
   location      = "US"
   force_destroy = true
-
+   logging {
+    log_bucket = var.logging_info["log_bucket"]
+    log_object_prefix = var.logging_info["log_object_prefix"]
+  }
   project = "acme-data-ingestion-4"
   
   uniform_bucket_level_access = true
@@ -81,7 +101,10 @@ resource "google_storage_bucket" "acme_bucket_7" {
   force_destroy = true
 
   project = "acme-data-ingestion-4"
-  
+   logging {
+    log_bucket = var.logging_info["log_bucket"]
+    log_object_prefix = var.logging_info["log_object_prefix"]
+  }
   uniform_bucket_level_access = true
 }
 
@@ -91,7 +114,10 @@ resource "google_storage_bucket" "acme_bucket_8" {
   force_destroy = true
 
   project = "acme-data-ingestion-4"
-  
+   logging {
+    log_bucket = var.logging_info["log_bucket"]
+    log_object_prefix = var.logging_info["log_object_prefix"]
+  }
   uniform_bucket_level_access = true
 }
 
@@ -99,7 +125,10 @@ resource "google_storage_bucket" "acme_bucket_9" {
   name          = "acme_bucket_9"
   location      = "US"
   force_destroy = true
-
+   logging {
+    log_bucket = var.logging_info["log_bucket"]
+    log_object_prefix = var.logging_info["log_object_prefix"]
+  }
   project = "acme-data-ingestion-4"
   
   uniform_bucket_level_access = true
