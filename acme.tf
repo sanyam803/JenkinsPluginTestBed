@@ -26,8 +26,8 @@ resource "google_storage_bucket" "acme_bucket_1" {
   project = "acme-data-ingestion-4"
   uniform_bucket_level_access = true
   logging {
-    log_bucket = var.log_bucket
-    log_object_prefix = var.log_object_prefix
+    log_bucket = var.logging_info["log_bucket"]
+    log_object_prefix = var.logging_info["log_object_prefix"]
   }
 }
 
