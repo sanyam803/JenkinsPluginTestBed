@@ -6,6 +6,14 @@ terraform {
   }
 }
 
+variable "logging_info" {
+  type = map
+  default  = {
+   log_bucket = "example-logs-bucket"
+   log_object_prefix = "log_object_prefix"
+  } 
+}
+
 provider "google" {
   region  = "us-central1"
   zone    = "us-central1-c"
@@ -15,9 +23,13 @@ resource "google_storage_bucket" "acme_bucket_1" {
   name          = "acme_bucket_1"
   location      = "US"
   force_destroy = true
-   
+  logging = var. 
   project = "acme-data-ingestion-4"
   uniform_bucket_level_access = true
+  logging {
+    log_bucket = var.log_bucket
+    log_object_prefix = var.log_object_prefix
+  }
 }
 
 resource "google_storage_bucket" "acme_bucket_2" {
