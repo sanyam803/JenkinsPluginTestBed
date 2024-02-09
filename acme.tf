@@ -23,7 +23,6 @@ resource "google_storage_bucket" "acme_bucket_1" {
   name          = "acme_bucket_1"
   location      = "US"
   force_destroy = true
-  logging = var. 
   project = "acme-data-ingestion-4"
   uniform_bucket_level_access = true
   logging {
