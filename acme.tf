@@ -25,10 +25,6 @@ resource "google_storage_bucket" "acme_bucket_1" {
   force_destroy = true
   project = "acme-data-ingestion-4"
   uniform_bucket_level_access = true
-  logging {
-    log_bucket = var.logging_info["log_bucket"]
-    log_object_prefix = var.logging_info["log_object_prefix"]
-  }
 }
 
 resource "google_storage_bucket" "acme_bucket_2" {
@@ -109,12 +105,3 @@ resource "google_storage_bucket" "acme_bucket_9" {
   uniform_bucket_level_access = true
 }
 
-resource "google_storage_bucket" "acme_bucket_10" {
-  name          = "acme_bucket_10"
-  location      = "US"
-  force_destroy = true
-
-  project = "acme-data-ingestion-4"
-  
-  uniform_bucket_level_access = true
-}
