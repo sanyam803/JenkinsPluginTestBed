@@ -17,7 +17,6 @@ resource "google_storage_bucket" "acme_bucket_1" {
   force_destroy = true
    
   project = "acme-data-ingestion-4"
-  logging  = var.logging_config
   uniform_bucket_level_access = true
 }
 
