@@ -12,9 +12,9 @@ provider "google" {
 }
 
 variable "logging_config" {
-logging {
-    log_bucket = "example-logs-bucket"
-    log_object_prefix = "log_object_prefix"
+  logging {
+      log_bucket = "example-logs-bucket"
+      log_object_prefix = "log_object_prefix"
   }
 }
 
@@ -24,7 +24,10 @@ resource "google_storage_bucket" "acme_bucket_1" {
   force_destroy = true
 
   project = "acme-data-ingestion-4"
-  var.logging_config
+  logging {
+    log_bucket = "example-logs-bucket"
+    log_object_prefix = "log_object_prefix"
+  }
 
   uniform_bucket_level_access = true
 }
