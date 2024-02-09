@@ -11,16 +11,11 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
-variable "logging_config" {
-    log_bucket = "example-logs-bucket"
-    log_object_prefix = "log_object_prefix"
-}
-
 resource "google_storage_bucket" "acme_bucket_1" {
   name          = "acme_bucket_1"
   location      = "US"
   force_destroy = true
-
+   
   project = "acme-data-ingestion-4"
   logging  = var.logging_config
   uniform_bucket_level_access = true
@@ -52,7 +47,6 @@ resource "google_storage_bucket" "acme_bucket_4" {
 
   project = "acme-data-ingestion-4"
 
-
   uniform_bucket_level_access = true
 }
 
@@ -61,7 +55,6 @@ resource "google_storage_bucket" "acme_bucket_5" {
   location      = "US"
   force_destroy = true
   
-
   project = "acme-data-ingestion-4"
   uniform_bucket_level_access = true
 }
