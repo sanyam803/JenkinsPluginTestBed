@@ -24,7 +24,7 @@ resource "google_storage_bucket" "acme_bucket_a" {
   location      = "US"
   force_destroy = true
   project = "acme-data-ingestion-4"
-  uniform_bucket_level_access = true
+  uniform_bucket_level_access = false
 }
 
 resource "google_storage_bucket" "acme_bucket_b" {
@@ -32,7 +32,7 @@ resource "google_storage_bucket" "acme_bucket_b" {
   location      = "US"
   force_destroy = true
   project = "acme-data-ingestion-4"
-  uniform_bucket_level_access = true
+  uniform_bucket_level_access = false
 }
 
 resource "google_storage_bucket" "acme_bucket_c" {
@@ -42,7 +42,7 @@ resource "google_storage_bucket" "acme_bucket_c" {
   
   project = "acme-data-ingestion-4"
 
-  uniform_bucket_level_access = true
+  uniform_bucket_level_access = false
 }
 
 
