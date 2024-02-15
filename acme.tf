@@ -19,46 +19,30 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
-resource "google_storage_bucket" "acme_bucket_a1" {
-  name          = "acme_bucket_a1"
+resource "google_storage_bucket" "acme_bucket_a2" {
+  name          = "acme_bucket_a2"
   location      = "US"
   force_destroy = true
   project = "acme-data-ingestion-4"
-  uniform_bucket_level_access = true
-  
-  logging {
-    log_bucket   = "my-unique-logging-bucket" // Create a separate bucket for logs
-    log_object_prefix = "tf-logs/"             // Optional prefix for better structure
-  }
+  uniform_bucket_level_access = false
 }
 
-resource "google_storage_bucket" "acme_bucket_b1" {
-  name          = "acme_bucket_b1"
+resource "google_storage_bucket" "acme_bucket_b2" {
+  name          = "acme_bucket_b2"
   location      = "US"
   force_destroy = true
   project = "acme-data-ingestion-4"
-  uniform_bucket_level_access = true
-  
-  logging {
-    log_bucket   = "my-unique-logging-bucket" // Create a separate bucket for logs
-    log_object_prefix = "tf-logs/"             // Optional prefix for better structure
-  }
-  
+  uniform_bucket_level_access = false 
 }
 
-resource "google_storage_bucket" "acme_bucket_c1" {
-  name          = "acme_bucket_c1"
+resource "google_storage_bucket" "acme_bucket_c2" {
+  name          = "acme_bucket_c2"
   location      = "US"
   force_destroy = true
   
   project = "acme-data-ingestion-4"
 
-  uniform_bucket_level_access = true
-  
-  logging {
-    log_bucket   = "my-unique-logging-bucket" // Create a separate bucket for logs
-    log_object_prefix = "tf-logs/"             // Optional prefix for better structure
-  }
+  uniform_bucket_level_access = false
 
 }
 
