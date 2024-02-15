@@ -6,38 +6,43 @@ terraform {
   }
 }
 
+variable "logging_info" {
+  type = map
+  default  = {
+   log_bucket = "example-logs-bucket"
+   log_object_prefix = "log_object_prefix"
+  } 
+}
+
 provider "google" {
   region  = "us-central1"
   zone    = "us-central1-c"
 }
 
-resource "google_compute_network" "acme_network"{
-  name                            = "acme-network-1"
-  delete_default_routes_on_create = false
-  auto_create_subnetworks         = false
-  routing_mode                    = "REGIONAL"
-  mtu                             = 100
-  project                         = "acme-24-expansion"
-}
-
-resource "google_container_node_pool" "acme_node_pool" {
-  name               = "acme-node-pool-1"
-  cluster            = "acme-cluster-1"
-  project            = "acme-24-expansion"
-  initial_node_count = 2
-
-  node_config {
-    preemptible  = true
-    machine_type = "e2-medium"
-  }
-}
-
-resource "google_storage_bucket" "acme_bucket" {
-  name          = "acme-bucket-1"
-  location      = "EU"
+resource "google_storage_bucket" "acme_bucket_a" {
+  name          = "acme_bucket_a"
+  location      = "US"
   force_destroy = true
-
-  project = "acme-24-expansion"
-
-  uniform_bucket_level_access = false
+  project = "acme-data-ingestion-4"
+  uniform_bucket_level_access = true
 }
+
+resource "google_storage_bucket" "acme_bucket_b" {
+  name          = "acme_bucket_b"
+  location      = "US"
+  force_destroy = true
+  project = "acme-data-ingestion-4"
+  uniform_bucket_level_access = true
+}
+
+resource "google_storage_bucket" "acme_bucket_c" {
+  name          = "acme_bucket_c"
+  location      = "US"
+  force_destroy = true
+  
+  project = "acme-data-ingestion-4"
+
+  uniform_bucket_level_access = true
+}
+
+
