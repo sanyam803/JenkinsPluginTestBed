@@ -6,6 +6,7 @@ provider "google" {
 resource "google_storage_bucket" "acme-bucket-62" {
   name          = "acme-bucket-62"
   location      = "EU"
+  project = "iac-demo-proj" 
   force_destroy = true
   logging {
     log_bucket   = "my-unique-logging-bucket" // Create a separate bucket for logs
