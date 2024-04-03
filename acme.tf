@@ -4,7 +4,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "acme-bucket-2" {
-  name          = "acme-bucket-6"
+  name          = "acme-bucket-2"
   location      = "US"
   force_destroy = true
 
