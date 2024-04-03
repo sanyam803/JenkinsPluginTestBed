@@ -3,8 +3,8 @@ provider "google" {
   region  = "us-east1"
 }
 
-resource "google_storage_bucket" "kishore-bucket-6" {
-  name          = "kishore-bucket-3"
+resource "google_storage_bucket" "acme-bucket-6" {
+  name          = "acme-bucket-6"
   location      = "EU"
   force_destroy = true
   logging {
