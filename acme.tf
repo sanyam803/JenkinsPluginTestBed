@@ -18,7 +18,3 @@ resource "google_storage_bucket" "acme_bucket_a2" {
   project = "acme-data-ingestion-4"
   uniform_bucket_level_access = true
 }
-
-}
-
-
