@@ -3,8 +3,8 @@ provider "google" {
   region  = "us-east1"
 }
 
-resource "google_storage_bucket" "acme-bucket-60" {
-  name          = "acme-bucket-60"
+resource "google_storage_bucket" "acme-bucket-a6" {
+  name          = "acme-bucket-a6"
   location      = "US"
   project = "iac-demo-proj" 
   force_destroy = true
