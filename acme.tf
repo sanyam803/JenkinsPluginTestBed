@@ -11,7 +11,7 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
-resource "google_storage_bucket" "acme_bucket_a2" {
+resource "google_storage_bucket" "acme_bucket_a3" {
   name          = "acme_bucket_a2"
   location      = "EU"
   force_destroy = true
