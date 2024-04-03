@@ -25,6 +25,11 @@ resource "google_storage_bucket" "acme_bucket_a2" {
   force_destroy = true
   project = "acme-data-ingestion-4"
   uniform_bucket_level_access = false
+
+  logging {
+    log_bucket   = "my-unique-logging-bucket" // Create a separate bucket for logs
+    log_object_prefix = "tf-logs/"             // Optional prefix for better structure
+  } 
 }
 
 resource "google_storage_bucket" "acme_bucket_b2" {
@@ -33,17 +38,24 @@ resource "google_storage_bucket" "acme_bucket_b2" {
   force_destroy = true
   project = "acme-data-ingestion-4"
   uniform_bucket_level_access = false 
+
+  logging {
+    log_bucket   = "my-unique-logging-bucket" // Create a separate bucket for logs
+    log_object_prefix = "tf-logs/"             // Optional prefix for better structure
+  } 
 }
 
 resource "google_storage_bucket" "acme_bucket_c2" {
   name          = "acme_bucket_c2"
   location      = "US"
   force_destroy = true
-  
   project = "acme-data-ingestion-4"
-
   uniform_bucket_level_access = false
 
+  logging {
+    log_bucket   = "my-unique-logging-bucket" // Create a separate bucket for logs
+    log_object_prefix = "tf-logs/"             // Optional prefix for better structure
+  } 
 }
 
 
